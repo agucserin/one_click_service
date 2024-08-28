@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "One Click Service",
+    "version": "3.25",
+    "description": "Extracts authentication code from Naver mail & Gmail.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://mail.naver.com/*",
+        "https://iam2.#####.ac.kr/*",
+        "https://mail.google.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/icons8-color-16.png",
+            "32": "/images/icons8-color-32.png",
+            "48": "/images/icons8-color-48.png",
+            "128": "/images/icons8-color-128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/icons8-color-16.png",
+        "32": "/images/icons8-color-32.png",
+        "48": "/images/icons8-color-48.png",
+        "128": "/images/icons8-color-128.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://iam2.#####.ac.kr/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ]
+  }
+  
+  
