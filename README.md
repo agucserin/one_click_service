@@ -416,7 +416,7 @@ const enterAuthCode = async (authCode, currentTabId, sendResponse) => {
 console.log("Content script loaded");
 
 // URL 매칭 함수
-const matchPattern = "https://iam2.kaist.ac.kr/*";
+const matchPattern = "https://iam2.#####.ac.kr/*"; //학교 이름은 #처리 하였음
 const regex = new RegExp(matchPattern.replace("*", ".*"));
 
 async function initialize() {
@@ -429,7 +429,7 @@ async function initialize() {
   console.log("URL 매칭 여부:", isMatch);
 ```
 
-- **URL 매칭**: 스크립트가 특정 URL 패턴과 일치하는지 확인합니다. 여기서는 `https://iam2.kaist.ac.kr/*` 패턴을 사용해, 사용자가 접속한 페이지가 이 패턴에 맞는지 검사합니다.
+- **URL 매칭**: 스크립트가 특정 URL 패턴과 일치하는지 확인합니다. 여기서는 `https://iam2.#####.ac.kr/*` 패턴을 사용해, 사용자가 접속한 페이지가 이 패턴에 맞는지 검사합니다.
 - **초기화 함수**: `initialize()` 함수는 DOM이 완전히 로드된 후, URL이 패턴과 일치하는지 확인하고, 일치할 경우 특정 작업을 수행하는 로직을 포함합니다.
 
 ```jsx
